@@ -5,5 +5,5 @@ metadata:
   namespace: default     # Changed from 'flux-system' to 'default'
 spec:
   interval: 1m
-  url: "curl https://github.com/dhanunjayareddy/helm-ch/index.yaml"  # Updated URL to point to your GitHub repository
+  url: "https://raw.githubusercontent.com/dhanunjayareddy/helm-ch/main/index.yaml"  # Updated URL to point to your GitHub repository
 
