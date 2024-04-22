@@ -11,7 +11,7 @@ spec:
       version: "0.1.0"        # Specific chart version to deploy
       sourceRef:
         kind: HelmRepository
-        name: my-phoenix-repo # References the HelmRepository created above
+        name: my-pheonix-app # References the HelmRepository created above
         namespace: default    # Namespace must match the HelmRepository's namespace
   values:
     key: value                    
