@@ -1,17 +1,17 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: my-phoenix-app   
-  namespace: default      
+  name: phoenix-app-release  # Name of the HelmRelease
+  namespace: default          # Ensure this matches the namespace where you want to deploy the chart
 spec:
-  interval: 1m            
+  interval: 5m                # How often Flux should check for updates
   chart:
     spec:
-      chart: phoenix-app           
-      version: "0.1.0"            
+      chart: phoenix-app      # Chart name as listed in the index.yaml
+      version: "0.1.0"        # Specific chart version to deploy
       sourceRef:
         kind: HelmRepository
-        name: my-phoenix-app     
-        namespace: default       
+        name: my-phoenix-repo # References the HelmRepository created above
+        namespace: default    # Namespace must match the HelmRepository's namespace
   values:
     key: value                    
