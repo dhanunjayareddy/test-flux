@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: my-pheonix-app-release   # Name of the HelmRelease
+  name: my-pheonix-app   # Name of the HelmRelease
   namespace: default             # Same namespace as specified for the HelmRepository
 spec:
   interval: 5m                   # Sync interval
