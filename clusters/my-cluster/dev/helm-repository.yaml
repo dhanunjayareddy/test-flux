@@ -1,9 +1,0 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta1
-kind: HelmRepository
-metadata:
-  name: my-pheonix-app   # Changed from 'example-repo' to 'my-pheonix-app'
-  namespace: default     # Changed from 'flux-system' to 'default'
-spec:
-  interval: 1m
-  url: "https://raw.githubusercontent.com/dhanunjayareddy/helm-ch/main"  # Updated URL to point to your GitHub repository
-
