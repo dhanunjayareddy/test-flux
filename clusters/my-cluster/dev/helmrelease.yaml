@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: phoenix-app      # Chart name as listed in the index.yaml
-      version: "1.1.1"        # Specific chart version to deploy
+      version: "1.1.2"        # Specific chart version to deploy
       sourceRef:
         kind: HelmRepository
         name: my-pheonix-app # References the HelmRepository created above
