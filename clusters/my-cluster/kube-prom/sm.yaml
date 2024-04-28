@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: postgres-exporter-monitor
+  namespace: default
+  labels:
+    release: my-monitor  # This label must match the one in Prometheus' serviceMonitorSelector
+spec:
+  selector:
+    matchLabels:
+      app: postgres-exporter  # This label should match the labels on your PostgreSQL exporter service
+  endpoints:
+    - port: http
+      interval: 30s
+
