@@ -14,4 +14,4 @@ spec:
         name: my-pheonix-app # References the HelmRepository created above
         namespace: default    # Namespace must match the HelmRepository's namespace
   values:
-    key: value                    
+   replicaCount: 2                  
