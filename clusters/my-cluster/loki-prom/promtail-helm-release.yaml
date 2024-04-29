@@ -1,0 +1,29 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: promtail
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: promtail
+      version: "3.9.0"  # Check for the latest version on the Grafana Helm repo
+      sourceRef:
+        kind: HelmRepository
+        name: loki-prom
+        namespace: default
+  values:
+    config:
+      clients:
+        - url: http://loki.monitoring.svc.cluster.local:3100/loki/api/v1/push
+      positions:
+        filename: /run/promtail/positions.yaml
+      scrape_configs:
+      - job_name: kubernetes-pods-name
+        kubernetes_sd_configs:
+        - role: pod
+        relabel_configs:
+        - source_labels: [__meta_kubernetes_pod_label_name]
+          action: keep
+          regex: .+
