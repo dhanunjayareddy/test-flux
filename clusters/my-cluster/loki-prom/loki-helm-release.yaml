@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: loki
-      version: "2.8.0"  # Check for the latest version on the Grafana Helm repo
+      # version: "2.8.0"  # Check for the latest version on the Grafana Helm repo
       sourceRef:
         kind: HelmRepository
         name: loki-prom
